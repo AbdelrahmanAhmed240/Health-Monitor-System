@@ -37,7 +37,7 @@ By integrating multiple sensors with an ESP32 microcontroller, this system conti
 | Component              | Description                       |
 |------------------------|---------------------------------|
 | ESP32 Microcontroller   | Central controller and communicator |
-| Heart Rate Sensor       | Monitors patient's heart rate    |
+| Max30102     | Monitors patient's heart rate and Oxygen Level    |
 | LM35 Temperature Sensor | Measures body temperature        |
 | MQ-7 Gas Sensor         | Detects carbon monoxide (CO)     |
 | MQ-135 Gas Sensor       | Detects carbon dioxide (CO₂)     |
