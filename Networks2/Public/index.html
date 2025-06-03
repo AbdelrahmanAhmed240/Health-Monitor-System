@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Health Monitoring Dashboard</title>
+
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Health Monitoring Dashboard</h1>
+      <p class="subtitle">Real-time Patient Sensor Data</p>
+    </header>
+
+    <main>
+      <section class="sensor-cards" aria-label="Sensor readings">
+        <article class="sensor-card" role="region" aria-live="polite">
+          <i class="fas fa-temperature-half icon temp-icon" aria-hidden="true"></i>
+          <div>
+            <h3>Room Temperature</h3>
+            <p><span id="temperature">--</span> °C</p>
+          </div>
+        </article>
+
+        <article class="sensor-card" role="region" aria-live="polite">
+          <i class="fas fa-heartbeat icon heart-icon" aria-hidden="true"></i>
+          <div>
+            <h3>Heart Rate</h3>
+            <p><span id="bpm">--</span> BPM</p>
+          </div>
+        </article>
+
+        <article class="sensor-card" role="region" aria-live="polite">
+          <i class="fas fa-lungs icon spo2-icon" aria-hidden="true"></i>
+          <div>
+            <h3>SpO₂</h3>
+            <p><span id="spo2">--</span> %</p>
+          </div>
+        </article>
+
+        <article class="sensor-card" role="region" aria-live="polite">
+          <i class="fas fa-temperature-full icon body-temp-icon" aria-hidden="true"></i>
+          <div>
+            <h3>Body Temperature</h3>
+            <p><span id="bodyTemp">--</span> °C</p>
+          </div>
+        </article>
+
+        <article class="sensor-card" role="region" aria-live="polite">
+          <i class="fas fa-smoking icon co-icon" aria-hidden="true"></i>
+          <div>
+            <h3>CO (Carbon Monoxide)</h3>
+            <p><span id="co">--</span> ppm</p>
+          </div>
+        </article>
+
+        <article class="sensor-card" role="region" aria-live="polite">
+          <i class="fas fa-cloud icon co2-icon" aria-hidden="true"></i>
+          <div>
+            <h3>CO₂ (Carbon Dioxide)</h3>
+            <p><span id="co2">--</span> ppm</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="commands-section" aria-label="Commands section">
+        <h2>Send Commands</h2>
+        <form id="commandForm">
+          <label for="commandSelect">Select Command:</label>
+          <select id="commandSelect" name="command" required>
+            <option value="" disabled selected>Select an action</option>
+            <option value="increase_temp">Increase Room Temperature</option>
+            <option value="decrease_temp">Decrease Room Temperature</option>
+            <option value="administer_medication">Administer Medication</option>
+            <option value="request_tests">Request Additional Tests</option>
+          </select>
+          <button type="submit">Send Command</button>
+        </form>
+        <p id="commandStatus" aria-live="polite"></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
